@@ -48,7 +48,7 @@ public class CommentsController {
 	            List<Comments> list = commentsService.findByUsername(name);
 	            return ResponseEntity.ok(list);
 	        } else if (dateString != null) {
-	            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS");
+	            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	            java.sql.Date date = new java.sql.Date(dateFormat.parse(dateString).getTime());
 	          
 	            List<Comments> list = commentsService.findCommentsByDate(date);
